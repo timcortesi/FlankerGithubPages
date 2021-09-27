@@ -12,13 +12,11 @@ layout: default
 
         <!-- You need this for passing data to the database -->
         <!-- <script src="static/utils.js"></script> -->
-        <link rel="stylesheet" type="text/css" href="static/styles.css">
+        <link rel="stylesheet" type="text/css" href="{{ site.url }}/static/styles.css">
 
     </head>
 
-
     <body>
-        
         <!-- intro message -->
         <div id='main' style="font-family: Arial">
             <h1>Welcome!</h1>
@@ -38,7 +36,8 @@ layout: default
                 <form action="" method="post">
                 </form>
                 <p><b>Note:</b> Starting the experiment will initiate full screen mode on your computer (using full screen ensures all experiments load correctly). Please do not exit full screen at any point during the experiment.</p>
-                <button onclick='startpage_exit_experiment()' id='start_submit'>Quit Experiment<br>(I do not consent to participate)</button>
+                <button onclick='startpage_start_experiment()' id='start_submit'>Start Experiment<br>(I consent)</button>
+                <button onclick='startpage_exit_experiment()' id='exit_submit'>Quit Experiment<br>(I do not consent to participate)</button>
             </div>
 
         </div>
@@ -50,7 +49,10 @@ layout: default
             localStorage.setItem('creditid', creditid)
 
             startpage_exit_experiment = function () {
-                window.location = '_noconsent_exit_'
+                window.location = '{{ site.url }}/templates/noconsent_exit.html'
+            }
+            startpage_start_experiment = function () {
+                window.location = '{{ site.url }}/templates/experiments/Flanker_Task.html'
             }
         </script>
 
