@@ -34,23 +34,7 @@ layout: default
 
             <div id = 'debrief_questionnaire'>
                 <form action="" method="post">
-                    {% if show_exit_survey == True %}
                         <p>Wait! Before you go, we'd love to get your anonymous feedback on the experiments you participated in. This is completely optional; you'll still recieve full credit even if you don't respond :)</p>
-                        {{ form.hidden_tag() }}
-                        {% for field in form %}
-                            {% if field.type == "BooleanField" %}
-                                <p>{{ field() }} {{ field.label }}</p>
-                            
-                            {% elif field.type == "SubmitField" %}
-                                <br>
-                                <p>{{ field(id="start_submit") }}</p>
-                            
-                            {% elif field.type == "StringField" %}
-                                <p>{{ field.label }} {{ field() }}</p>
-                            
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
                 </form>
             </div>
 
