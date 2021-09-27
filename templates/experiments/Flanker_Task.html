@@ -46,6 +46,7 @@ layout: default
 
 //------------------------------------------------------------------------------
     // Runtime variables
+    var webRoot = '{{ site.url }}';
     var currentTrialNumber;     //  Will be incremented at start
     var validTrials;            //  Counter for 'trials'
     var currentTrial;           //  For the STAIRCASE - do not touch!
@@ -110,34 +111,34 @@ layout: default
         else
             myIndex = '0' + `${i}`;
 
-        trlStrL = 'static/img/F3/LeftTarg' + myIndex + 'Contrast_F3.png';
+        trlStrL = webRoot+'/'+'static/img/F3/LeftTarg' + myIndex + 'Contrast_F3.png';
 	    myTrls_3.push(new Trial(trlStrL, "left", 0, i, 3));
 
-	   trlStrR = 'static/img/F3/RightTarg' + myIndex + 'Contrast_F3.png';
+	   trlStrR = webRoot+'/'+'static/img/F3/RightTarg' + myIndex + 'Contrast_F3.png';
        myTrls_3.push(new Trial(trlStrR, "right", 0, i, 3));	
 
-       trlStrL = 'static/img/F15/LeftTarg' + myIndex + 'Contrast_F15.png';
+       trlStrL = webRoot+'/'+'static/img/F15/LeftTarg' + myIndex + 'Contrast_F15.png';
        myTrls_15.push(new Trial(trlStrL, "left", 0, i, 15));
 
-       trlStrR = 'static/img/F15/RightTarg' + myIndex + 'Contrast_F15.png';
+       trlStrR = webRoot+'/'+'static/img/F15/RightTarg' + myIndex + 'Contrast_F15.png';
        myTrls_15.push(new Trial(trlStrR, "right", 0, i, 15));   
 
-       trlStrL = 'static/img/F6/LeftTarg' + myIndex + 'Contrast_F6.png';
+       trlStrL = webRoot+'/'+'static/img/F6/LeftTarg' + myIndex + 'Contrast_F6.png';
        myTrls_6.push(new Trial(trlStrL, "left", 0, i, 6));
 
-       trlStrR = 'static/img/F6/RightTarg' + myIndex + 'Contrast_F6.png';
+       trlStrR = webRoot+'/'+'static/img/F6/RightTarg' + myIndex + 'Contrast_F6.png';
        myTrls_6.push(new Trial(trlStrR, "right", 0, i, 6));  
 
-       trlStrL = 'static/img/F12/LeftTarg' + myIndex + 'Contrast_F12.png';
+       trlStrL = webRoot+'/'+'static/img/F12/LeftTarg' + myIndex + 'Contrast_F12.png';
        myTrls_12.push(new Trial(trlStrL, "left", 0, i, 12));
 
-       trlStrR = 'static/img/F12/RightTarg' + myIndex + 'Contrast_F12.png';
+       trlStrR = webRoot+'/'+'static/img/F12/RightTarg' + myIndex + 'Contrast_F12.png';
        myTrls_12.push(new Trial(trlStrR, "right", 0, i, 12));   
 
-       trlStrL = 'static/img/F0/LeftTarg' + myIndex + 'Contrast_F00.png';
+       trlStrL = webRoot+'/'+'static/img/F0/LeftTarg' + myIndex + 'Contrast_F00.png';
        myTrls_0.push(new Trial(trlStrR, "right", 0, i, 0));   
 
-       trlStrR = 'static/img/F0/RightTarg' + myIndex + 'Contrast_F00.png';
+       trlStrR = webRoot+'/'+'static/img/F0/RightTarg' + myIndex + 'Contrast_F00.png';
        myTrls_0.push(new Trial(trlStrR, "right", 0, i, 0));   
 	}
 
@@ -220,7 +221,7 @@ layout: default
                 ctx.drawImage(instrImage, 0, 50);
                 console.log("Instr Drawn!" + InstrFile);
             };
-            instrImage.src = InstrFile;  // Load name from trial listing
+            instrImage.src = webRoot+'/'+InstrFile;  // Load name from trial listing
 
             // Now waiting for keypress (spacebar) event to send exectuion to :"noDecisionClick"
             // KeyWait spacebar;
