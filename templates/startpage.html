@@ -36,10 +36,6 @@ layout: default
 
             <div>
                 <form action="" method="post">
-                    {{ form.hidden_tag() }}
-                    <p> {{ form.name.label }} {{ form.name(size=32,class='uinput') }} </p>
-                    <p> {{ form.consent() }} {{ form.consent.label }} </p>
-                    <p> {{ form.submit(id="start_submit") }} </p> 
                 </form>
                 <p><b>Note:</b> Starting the experiment will initiate full screen mode on your computer (using full screen ensures all experiments load correctly). Please do not exit full screen at any point during the experiment.</p>
                 <button onclick='startpage_exit_experiment()' id='start_submit'>Quit Experiment<br>(I do not consent to participate)</button>

@@ -20,13 +20,11 @@ layout: default
         <h2>We really appreciate it. Have an awesome day! :)</h2>
 
         <script type="text/javascript">
-            '{% if assign_SONA_credit == True %}'
-                if (localStorage.getItem('creditid') == 'null') {
-                    window.location = '/_crediterror_'
-                } else {
-                    window.location = '{{ SONA_link | safe }}'.concat(localStorage.getItem('creditid').toString())
-                }
-            '{% endif %}'
+            if (localStorage.getItem('creditid') == 'null') {
+                window.location = '/_crediterror_'
+            } else {
+                window.location = 'FIXTJC'.concat(localStorage.getItem('creditid').toString())
+            }
         </script>
 
 
